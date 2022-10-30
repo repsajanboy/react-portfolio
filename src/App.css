@@ -1,38 +1,312 @@
-.App {
+@import url("fonts.css");
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* primary navigation
+--------------------------------------------------------------------- */
+#nav-wrap {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* nav-wrap */
+#nav-wrap {
+  font: 12px "opensans-bold", sans-serif;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin: 0 auto;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+#nav-wrap a {
+  /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
+
+  display: inline-block;
+  padding: 8px 13px;
+  line-height: 32px;
+  text-decoration: none;
+  text-align: left;
+  color: #fff;
+
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  border-color: black;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: #e69c24 !important;
+}
+.navbar.colorChange {
+  background-color: #011e2e;
+}
+/* Header */
+header {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  width: 100%;
+  background: #022c43;
+  background-size: cover !important;
+  -webkit-background-size: cover;
+  text-align: center;
+  overflow: hidden;
+}
+
+header .banner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .banner-text {
+  width: 100%;
+}
+header .banner-text h1 {
+  font: 90px/1.1em "opensans-bold", sans-serif;
+  color: #fff;
+  letter-spacing: -2px;
+  margin: 0 auto 18px auto;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+header .banner-text h3 {
+  font: 18px/1.9em "librebaskerville-regular", serif;
+  color: #a8a8a8;
+  margin: 0 auto;
+  width: 70%;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+header .banner-text h3 span,
+header .banner-text h3 a {
+  color: #fff;
+}
+header .banner-text hr {
+  width: 60%;
+  margin: 18px auto 24px auto;
+  border-color: #f7f7f7;
+  border-color: rgba(250, 250, 250, 0.9);
+}
+
+@media screen and (max-width: 650px) {
+  header .banner-text h1 {
+    font: 48px/1.1em "opensans-bold", sans-serif;
+  }
+  header .banner-text h3 {
+    font: 16px/1.9em "librebaskerville-regular", serif;
+  }
+}
+
+/* About Section */
+#about {
+  background: #f7f7f7;
+  padding-top: 96px;
+  padding-bottom: 66px;
+  overflow: hidden;
+}
+
+#about h2 {
+  font: 22px/30px "opensans-bold", sans-serif;
+  margin-bottom: 12px;
+  color: #022c43;
+}
+#about p {
+  line-height: 30px;
+  color: #5a5a5a;
+}
+
+#about .profile-pic {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+}
+
+/*Resume */
+#resume {
+  background: #022c43;
+  padding-top: 90px;
+  padding-bottom: 72px;
+  overflow: hidden;
+}
+
+#resume h1 {
+  font: 18px/24px "opensans-bold", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#resume h1 span {
+  border-bottom: 3px solid #e69c24;
+  padding-bottom: 6px;
+}
+#resume h3 {
+  font: 25px/30px "opensans-bold", sans-serif;
+  color: #fff;
+}
+
+#resume p {
+  color: #dfdfdf;
+}
+
+.education,
+.skills {
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #4e4e4e;
+}
+
+.skills-tile {
+  background-color: rgba(248, 245, 244, 0.05);
+  padding: 10px 10px 5px;
+  width: 100px;
+  margin: 5px 0;
+  border-radius: 8px;
+}
+
+.skills-tile p {
+  margin-top: 4px;
+  color: #fff;
+}
+
+.badge-tile {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.badge-tile span {
+  border: 1px solid #fff;
+  padding: 5px 8px !important;
+  margin-right: 5px;
+}
+
+.badge-tile span i {
+  font: 10px "opensans-light", sans-serif;
+  font-style: italic;
+}
+/*Work */
+#works {
+  background: #f7f7f7;
+  padding-top: 96px;
+  padding-bottom: 66px;
+  overflow: hidden;
+}
+
+#works h1 {
+  font: 24px/28px "opensans-bold", sans-serif;
+  color: #022c43;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#works h1 span {
+  border-bottom: 3px solid #011e2e;
+  padding-bottom: 6px;
+}
+
+.project div {
+  background: #fff;
+  display: inline-block;
+  margin: 0 auto 5%;
+  padding: 10px 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 30%);
+  transition: all 0.2s linear;
+  z-index: 0;
+  position: relative;
+}
+
+.project img {
+  display: block;
+  width: 100%;
+}
+
+.project-title {
+  margin-top: 5%;
+  font: 18px/24px "opensans-bold", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #000;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.project:hover {
+  transform: scale(1.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*Contact */
+#contact {
+  background: #022c43;
+  padding-top: 90px;
+  padding-bottom: 72px;
+  overflow: hidden;
+}
+#contact h1 {
+  font: 24px/28px "opensans-bold", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#contact h1 span {
+  border-bottom: 3px solid #e69c24;
+  padding-bottom: 6px;
+}
+
+#contact p {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 0px !important;
+}
+
+#contact .contact-wrap {
+  padding: 1rem 0px;
   display: flex;
-  flex-direction: column;
+  -webkit-box-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  margin: 0.5rem 0px;
 }
 
-.App-link {
-  color: #61dafb;
+#contact .contact-wrap::before {
+  content: "";
+  height: 100%;
+  width: 0.1rem;
+  position: absolute;
+  left: 8rem;
+  top: 0px;
+  background-color: #e69c24;
+}
+/* Footer */
+#footer {
+  background-color: #011e2e;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#footer p {
+  color: #fff;
 }
